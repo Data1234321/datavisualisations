@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+sns.set(palette='deep')
+from matplotlib.axes._axes import _log as matplotlib_axes_logger
+matplotlib_axes_logger.setLevel('ERROR')
+import matplotlib.pyplot as plt
+
+gun_violence = pd.read_csv('gun-violence-data_01-2013_03-2018.csv')
+
+cali_regional_incidents.plot.barh(x='city_or_county', y='incidents').invert_yaxis()
+plt.title('Gun crime in Californian cities or counties', size=18, color='grey', pad=35)
+plt.suptitle('2013 to 2018', size=14, color='orange', y=0.95)
+plt.xlabel('Gun related incidents', size=15, color='red', labelpad=10)
+plt.ylabel('City or county', size=15, color='green', labelpad=10)
+plt.grid(color='black',linewidth=0.05, alpha=0.5)
+plt.figure(figsize=(8,6));
